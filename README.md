@@ -4,6 +4,16 @@
 
 * 代码Github URL:[点此查看我的Github代码](https://github.com/Liangyingqi/python/tree/master/wxqmxm)
 * 云服务器 URL：[点击查看我的云服务器url](http://121.199.73.44:9999/)
+* pythonanywhere: [点击查看我的pythonanywhere地址](http://chenliang18.pythonanywhere.com/)
+
+
+#### 相关的的html页面：
+
+1. [首页](http://chenliang18.pythonanywhere.com/)
+2. [全国粗离婚率（地图）](http://chenliang18.pythonanywhere.com/clhl1)
+3. [全国及各地区离婚率（折线图）](http://chenliang18.pythonanywhere.com/clhl2)
+4. [近6年居民人均可支配收入与离婚率（散点图）](http://chenliang18.pythonanywhere.com/jm2)
+5. [近8年学历与离婚率（散点图）](http://chenliang18.pythonanywhere.com/lh8n/)
 
 ### 项目内容：
 1. 根据17级提供的可视化数据，和18级的合作者利用自己所学知识，询问有相关经验的人，共同实现交互，三位合作人积极探索，相互分工合作；
@@ -16,17 +26,21 @@
 
 1. 两个py文件：一个app.py是用于向前端传输可视化图表及数据，然后利用flaskORM框架数据库反向生成models；
 
-2. 在app.py中，运用多个def函数，还有pymysql、flask_sqlalchemy等模块；
+2. 运用多个def函数，还有pymysql、flask_sqlalchemy等模块；
 
-3. 在models.py中，引用了sqlalchemy和flask_sqlalchemy模块，连接数据库，并且利用所学知识和查询相关技术信息，运用wampsever运行本地的phpmyadmin，新建database，并导入sql，运用navicat for mysql连接phpmyadmin，并在app.py中配置数据库。
+3. 在models.py中，引用了sqlalchemy和flask_sqlalchemy模块，连接数据库，并且利用所学知识和查询相关技术信息，运用wampsever运行本地的phpmyadmin，新建database，并导入sql，运用navicat for mysql连接phpmyadmin，并在app.py中配置数据库；
+
+4. models.py是数据库模型，主要用于传递，读取csv数据，并且读取csv文件的数据写入mysql数据库；
+
+5. 使用路由规则@app.route("/")，建立路由指向目标路径，并用return值进行返回。
 
 ### html界面说明：
 **首页：** 首页主要是一个数据故事的阐述，交代了这个项目主题的选题背景，有轮播图和一些数据故事，还有一些年份的选择框，可以选中不同的年份查看全国在该年的粗离婚率，在主页我们设置了侧边栏，主要用于跳转到相对应的可视化图表。
 
 **全国粗离婚率、近6年居民人均可支配收入与离婚率、近8年学历与离婚率：** 该图表由17级提供，表格的呈现由我与18级合作伙伴共同完成，在全国粗离婚率中，可以看到2010-2017年不同年份的全国粗离婚率，颜色的深浅代表了不同程度的离婚率，颜色越深，代表了粗离婚率越高；另外，在这个页面可以实现信息过滤，如：选中2010年，可以看到该年的全国粗离婚率，另外，选中不一样的省份，会有颜色高亮，并且在左下角会有相对应的颜色位置。其它也是如此
 
-**全国及各地区离婚率：** 该地图及数据由17级提供，首先呈现的是2010年-2018年的全国各省离婚率变化趋势，另外，在这个页面里，也实现了交互功能，我们在c1.html中， 也实现了下拉框跳转功能，可以跳转到不同地区的离婚率变化趋势。
-
+**全国及各地区离婚率：** 该地图及数据由17级提供，首先呈现的是2010年-2018年的全国各省离婚率变化趋势，另外，在这个页面里，也实现了交互功能，我们在c1.html中， 也实现了下拉框跳转功能，可以跳转到不同地区的离婚率变化趋势。运用了<div style="text-align:center ">进行居中，另外，运用<option value="value">来向服务器发送相对应的值，即下拉列表的内容。
+  
 **菜单栏跳转的html页面说明：** 
 
 * clhl1.html：内容为全国各省2010-2018年粗离婚率图及对应表格数据
@@ -50,6 +64,7 @@
 * c5.html：内容为中国西北地区离婚率变化趋势及对应表格数据
 
 * c6.html：内容为中国西南地区离婚率变化趋势及对应表格数据
+
 
 ### webapp动作描述：
 
